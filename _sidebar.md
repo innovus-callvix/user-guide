@@ -1,0 +1,20 @@
+- **User Guide**
+  - [Getting Started](guide/getting-started.md)
+  - [Calls](guide/calls.md)
+  - [SMS & Messaging](guide/sms.md)
+  - [Contacts](guide/contacts.md)
+  - [Phone Numbers](guide/phone-numbers.md)
+  - [Team Management](guide/team.md)
+  - [AI Voice Agents](guide/ai-agents.md)
+  - [Billing & Credits](guide/billing.md)
+
+- **API Reference**
+  - [Authentication](api/authentication.md)
+  - [API Keys](api/api-keys.md)
+  - [Contacts](api/contacts.md)
+  - [Calls](api/calls.md)
+  - [Messages](api/messages.md)
+  - [Phone Numbers](api/phone-numbers.md)
+  - [AI Agents & Knowledge Bases](api/ai-agents.md)
+  - [Credits](api/credits.md)
+  - [Webhooks](api/webhooks.md)
