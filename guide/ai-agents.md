@@ -1,105 +1,144 @@
-# AI Voice Agents
+# AI Agents
 
-AI voice agents let you deploy a fully automated voice assistant that handles inbound (and outbound) calls without a human agent. The AI speaks, listens, and responds in real time using your knowledge base.
+An AI Agent is an automated voice assistant that answers calls, talks to customers, and responds based on your knowledge base — without needing a human agent on the line.
+
+![AI Agents list](screenshots/ai-agents-list.png)
+*Your AI agents are shown as cards — click one to configure it*
 
 ---
 
-## How it works
+## Creating an agent
 
+Click **New Agent** on the AI Agents page.
+
+![Create agent dialog](screenshots/ai-agents-create.png)
+
+Fill in:
+- **Agent Name** — an internal label for your team (e.g. "Support Bot")
+- **Domain** — the area the agent specialises in (Customer Support, Sales, Technical Support, General Inquiry)
+- **Description** — a short note about what this agent is for
+
+Click **Create** to open the full configuration page.
+
+---
+
+## Configuring your agent
+
+The agent configuration page has several tabs on the left sidebar. Work through them top to bottom.
+
+![Agent configuration sidebar](screenshots/ai-agents-config-sidebar.png)
+
+---
+
+### Overview
+
+Set the agent's core identity and voice.
+
+![Overview tab](screenshots/ai-agents-overview.png)
+
+| Field | What to fill in |
+|-------|----------------|
+| **Agent Name** | The name the AI calls itself in conversations |
+| **Greeting** | The first sentence the AI speaks when someone calls |
+| **Voice** | Choose from the available voices (different accents and styles) |
+| **Language** | The language the AI speaks and understands |
+
+---
+
+### Brain
+
+The Brain tab controls how the AI thinks and responds.
+
+![Brain tab — System Prompt](screenshots/ai-agents-brain.png)
+
+**System Prompt** — the most important setting. This is your instructions to the AI:
+- What topics it can and can't discuss
+- What tone to use (friendly, professional, formal)
+- How to handle questions it doesn't know the answer to
+- Whether to offer to transfer to a human
+
+**Example system prompt:**
 ```
-Caller → Twilio → AI Worker (Python)
-                      ├── Deepgram STT  (speech → text)
-                      ├── Groq LLM      (text → response)
-                      ├── Deepgram TTS  (response → speech)
-                      └── Knowledge Base (RAG via pgvector)
+You are a friendly support agent for Acme Corp. 
+Answer questions about our products and pricing.
+If asked about billing, transfer to a human agent.
+Always be polite and concise.
 ```
 
-The AI searches your knowledge base on every turn to ground its answers in your content.
+**Capabilities** — toggle on/off what the agent is allowed to do (e.g. look up contacts, send SMS follow-ups).
+
+**Guardrails** — set boundaries: topics the agent must refuse, languages it should fall back to English for, etc.
 
 ---
 
-## Creating an AI agent
+### Knowledge
 
-1. Go to **AI Agents → New Agent**.
-2. Fill in:
-   - **Name** — internal label (e.g. "Support Bot").
-   - **Greeting** — the first thing the AI says when someone calls.
-   - **System Prompt** — instructions for how the AI should behave. Be specific: tone, topics it can/cannot discuss, how to handle escalations.
-   - **Voice** — choose from the available Deepgram voices (different accents and genders).
-   - **Language** — the language the AI will speak and understand.
-   - **Knowledge Base** — attach one or more knowledge bases (see below).
-3. Click **Save**.
+Connect your agent to a knowledge base so it can answer questions about your business.
 
----
+![Knowledge tab](screenshots/ai-agents-knowledge.png)
 
-## Knowledge bases
+1. Click **Add Knowledge Base**.
+2. Select an existing knowledge base or create a new one.
+3. The agent will search it on every turn to ground its answers in your content.
 
-A knowledge base is a collection of documents the AI searches when answering questions.
-
-**Create a knowledge base:**
-1. Go to **AI Agents → Knowledge Bases → New Knowledge Base**.
-2. Give it a name.
-3. Add content:
-   - **Upload a file** — PDF, DOCX, or TXT (max 50 MB).
-   - **Add a URL** — paste a website URL; Callvix will crawl and index its content.
-4. Wait for the status to change to **Ready** — processing takes a moment for large documents.
-
-**Attach to an agent:**
-- In the AI agent's settings, select one or more knowledge bases under **Knowledge Base**.
-
-**Delete a document:**
-- Open the knowledge base, find the document, and click **Delete**.
+> See [Knowledge Base](knowledge-base.md) to learn how to build and manage one.
 
 ---
 
-## Testing an AI agent
+### Handoffs
 
-Before going live, test the agent in your browser:
+Define what happens when the AI can't help and needs to transfer to a human.
+
+![Handoffs tab](screenshots/ai-agents-handoffs.png)
+
+- Set the trigger condition (e.g. "customer is upset", "billing question").
+- Choose which team or agent receives the transfer.
+- Write what the AI says before handing off.
+
+---
+
+### Policies
+
+Set conversation-level rules.
+
+![Policies tab](screenshots/ai-agents-policies.png)
+
+- **Max conversation length** — end the call after N minutes if still unresolved.
+- **Silence timeout** — how long to wait if the caller says nothing.
+- **Repeat limit** — how many times to re-prompt before ending.
+
+---
+
+## Testing your agent
+
+Before going live, test the agent in your browser — no phone call needed.
 
 1. Open the agent and click **Test Agent**.
-2. Allow microphone access.
-3. Speak naturally — the agent responds in real time via your browser speakers.
-4. When done, click **End Session**.
+2. Allow microphone access when prompted.
+3. Speak naturally — the agent responds through your speakers in real time.
+4. Click **End Session** when done.
 
-The test uses your browser microphone and speakers. No phone or Twilio minute is charged, but a session-based credit is deducted.
-
----
-
-## Publishing and assigning to a number
-
-An agent must be **Published** before it can handle real calls.
-
-1. Open the agent and click **Publish**.
-2. Go to **Phone Numbers → [your number] → AI Agent**.
-3. Assign the published agent.
-4. Toggle the AI agent on.
-
-From now on, inbound calls to that number are answered by the AI agent.
+![Test agent session](screenshots/ai-agents-test.png)
 
 ---
 
-## AI Campaigns
+## Publishing an agent
 
-Use AI campaigns to automatically dial a list of contacts and have the AI agent speak to each one.
+An agent must be **published** before it can handle real calls.
 
-**Create a campaign:**
-1. Go to **AI Campaigns → New Campaign**.
-2. Select the AI agent to use.
-3. Choose a phone number to dial from.
-4. Upload a contact list (CSV with `phone_number` column).
-5. Set the schedule (start time, max concurrent calls, timezone).
-6. Click **Launch**.
+1. Once you're happy with the configuration, click **Publish** (top-right).
+2. The agent status changes from **Draft** to **Published**.
 
-Monitor progress from the campaign detail page — see live call counts, completion rate, and per-contact outcomes.
+To take it offline, click **Unpublish**.
 
 ---
 
-## Credits
+## Assigning an agent to a phone number
 
-AI features consume credits from the agent's wallet (for test sessions and document embedding) or the phone number owner's wallet (for live inbound AI calls).
+1. Go to **Numbers → [your number] → AI Agent tab**.
+2. Select your published agent from the dropdown.
+3. Toggle the AI Agent on.
 
-| Action | Cost |
-|--------|------|
-| Embedding documents on deploy | Per 1,000 tokens (set by `AI_EMBEDDING_RATE_PER_1K`) |
-| Test agent sessions | Per minute (set by `AI_SESSION_RATE_PER_MIN`) |
-| Live inbound AI call | Per minute (from `billing_rates` table, `sell_rate_4`) |
+From now on, inbound calls to that number are handled by the AI.
+
+![Assign AI agent to number](screenshots/numbers-ai-agent.png)

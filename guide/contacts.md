@@ -1,62 +1,72 @@
 # Contacts
 
+The Contacts page is your address book. Every person your team calls or messages can be saved here with their details, tags, and history.
+
+![Contacts list](screenshots/contacts-list.png)
+*Switch between grid and table view using the icons top-right*
+
+---
+
 ## Adding a contact
 
-1. Go to **Contacts → Add Contact**.
-2. Fill in the required fields:
-   - **Full Name** (required)
-   - **Phone Number** (required, E.164 or local format)
-   - **Country** (auto-detected from number prefix)
-3. Optionally add: email, company, address, note, tags, and a profile photo.
-4. Click **Save**.
+Click **Add Contact** (top-right of the Contacts page).
+
+![Add contact form](screenshots/contacts-add-form.png)
+*Only Full Name and Phone Number are required — everything else is optional*
+
+Fill in:
+- **Full Name** *(required)*
+- **Phone Number** *(required)*
+- **Country** — auto-detected from the number prefix
+- **Email**, **Company**, **Address**, **Note** — all optional
+- **Tags** — pick from existing tags or create new ones
+- **Photo** — upload a profile picture
+
+Click **Save Contact** when done.
 
 ---
 
 ## Finding a contact
 
-Use the **Search** bar at the top of the Contacts list. You can search by:
-- Name
-- Phone number
-- Email
-- Company
+Use the **Search** bar at the top to find contacts by name, phone number, email, or company.
 
-**Filter** the list by:
-- Status (active / blocked)
+Use the **Filter** button to narrow down by:
+- Status (Active / Blocked)
 - Tags
-- Created by (which agent added them)
-- Date range
+- Date added
+- Added by (which team member)
+
+![Contact search and filter](screenshots/contacts-filter.png)
 
 ---
 
-## Editing a contact
+## Contact profile
 
-Click any contact to open their profile. Click **Edit** to update any field. Changes take effect immediately across all conversations with that contact.
+Click any contact to open their full profile.
 
----
+![Contact profile](screenshots/contacts-profile.png)
+*The profile shows all details, tags, notes, and the full communication history with that contact*
 
-## Blocking a contact
-
-On a contact's profile, click **Block**. Blocked contacts:
-- Cannot initiate inbound calls or SMS that are routed to agents.
-- Are shown with a `blocked` badge in the contact list.
-
-To unblock, open the contact and click **Unblock**.
+From the profile you can:
+- **Edit** any field
+- **Call** the contact directly
+- **Send a message**
+- **Block** or **Unblock** the contact
+- View the full conversation history
 
 ---
 
 ## Tags
 
-Tags let you organise contacts into groups (e.g. `VIP`, `Lead`, `Support`).
+Tags help you group and filter contacts (e.g. `VIP`, `Lead`, `Support`).
 
 **Create a tag:**
-1. Go to **Settings → Tags** (or from the contact edit form).
-2. Click **New Tag**, enter a name and pick a color.
+Go to **Settings → Tags**, click **New Tag**, give it a name and a colour.
 
-**Apply a tag to a contact:**
-- From the contact edit form, click the Tags field and select a tag.
-- Multiple tags can be applied to one contact.
+**Apply a tag:**
+Open a contact → Edit → click the Tags field → select or type a tag name.
 
-**Filter by tag:** In the Contacts list, use the Tag filter to show only contacts with a specific tag.
+![Contact tags](screenshots/contacts-tags.png)
 
 ---
 
@@ -64,27 +74,27 @@ Tags let you organise contacts into groups (e.g. `VIP`, `Lead`, `Support`).
 
 Admins and owners can bulk-import contacts from a CSV or Excel file.
 
-1. Go to **Contacts → Import**.
-2. Download the **template file** to see the required column format.
+1. Click **Import** on the Contacts page.
+2. Download the **template file** to see the correct column format.
 3. Fill in your contacts and upload the file.
-4. Review the import summary — any rows that failed (invalid number, missing name) are listed separately.
 
-Required columns: `full_name`, `phone_number`  
-Optional columns: `email_address`, `address`, `company`, `note`, `code` (country ISO2)
+![Bulk import dialog](screenshots/contacts-import.png)
+*Any rows that fail (invalid number, missing name) are listed in the import summary*
+
+**Required columns:** `full_name`, `phone_number`  
+**Optional columns:** `email_address`, `company`, `address`, `note`
 
 ---
 
 ## Exporting contacts
 
-Admins and owners can export contacts to CSV.
+Click **Export** to download your contacts as a CSV file.
 
-- **Export selected:** Check the contacts you want, then click **Export Selected**.
-- **Export all:** Click **Export All** — downloads all contacts matching your current filter.
-
-Exported columns: ID, Full Name, Phone Number, Email, Status, Created At (and optional fields if chosen).
+- **Export selected** — tick the contacts you want first
+- **Export all** — exports everything matching your current filter
 
 ---
 
-## Deleting contacts
+## Blocking a contact
 
-Select one or more contacts using the checkboxes, then click **Delete**. Deletion is permanent — there is no undo.
+Open the contact profile and click **Block**. Blocked contacts are flagged and won't be routed to your agents for inbound calls. To undo, click **Unblock** from the same profile.

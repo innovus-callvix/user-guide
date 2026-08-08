@@ -1,79 +1,94 @@
 # Getting Started
 
-## 1. Create your account
+Welcome to Callvix — your all-in-one business phone platform for calls, SMS, and AI-powered voice agents.
+
+---
+
+## Step 1 — Create your account
 
 Go to the Callvix app and click **Sign Up**.
 
-- Enter your email address — you'll receive a 6-digit OTP.
-- Enter the OTP to verify your email.
-- Set your name and password to complete registration.
+![Sign up screen](screenshots/auth-signup.png)
+*Enter your email to receive a verification code*
 
-> Already have an account? Click **Sign In** and enter your email and password.
+1. Enter your **email address** and click **Continue**.
+2. Check your inbox for a **6-digit verification code** and enter it.
+3. Set your **full name** and **password** to finish.
 
----
-
-## 2. Create a workspace
-
-A **workspace** is your team's home in Callvix. Everything — phone numbers, contacts, calls, agents — lives inside a workspace.
-
-1. After signing in, click **Create Workspace**.
-2. Give it a name (e.g. your company name).
-3. Complete the onboarding steps: pick your use case and account type.
-
-You can belong to multiple workspaces and switch between them from the top navigation.
+Already have an account? Click **Sign In** instead.
 
 ---
 
-## 3. Choose a plan
+## Step 2 — Create a workspace
 
-Before buying phone numbers or inviting team members, subscribe to a plan.
+A workspace is your team's home in Callvix. Everything — phone numbers, contacts, conversations, agents — lives inside it.
 
-1. Go to **Settings → Subscription**.
-2. Review the available plans (Basic, Pro, Enterprise).
-3. Click **Subscribe**, enter your payment details, and confirm.
+![Create workspace](screenshots/onboarding-workspace.png)
+*Name your workspace after your company or team*
 
-Your plan determines how many agents you can invite, how many phone numbers you can buy, and which features are unlocked.
+1. After signing in you'll be prompted to **Create a Workspace**.
+2. Enter a workspace name (usually your company name).
+3. Follow the onboarding steps to set your use case.
 
----
-
-## 4. Add credits
-
-Calls and SMS consume credits from your workspace wallet. Top up before you start.
-
-1. Go to **Billing → Credits**.
-2. Click **Add Credits** and choose an amount.
-3. Credits are deducted automatically — per minute for calls, per message for SMS.
-
-> Auto-refill is available. When your balance drops below a threshold, Callvix can automatically charge your card to top up.
+> You can belong to multiple workspaces and switch between them from the top of the sidebar.
 
 ---
 
-## 5. Buy a phone number
+## Step 3 — Choose a plan
 
-1. Go to **Phone Numbers → Browse Available Numbers**.
-2. Filter by country, area code, or capability (voice, SMS, MMS).
-3. Select a number and click **Buy**.
+Before inviting your team or buying phone numbers, subscribe to a plan.
 
-Your new number appears in **Phone Numbers** and is ready for calls and SMS immediately.
+![Plans page](screenshots/plans-list.png)
+*Compare plans and pick the one that fits your team size*
 
----
-
-## 6. Invite your team
-
-1. Go to **Settings → Team**.
-2. Click **Invite Member** and enter their email.
-3. Choose a role:
-   - **Admin** — manage numbers, agents, and settings; cannot transfer ownership.
-   - **Member** — make calls and send SMS; limited settings access.
-4. They'll receive an invite email with a link to join.
+1. Go to **Settings → Billing**.
+2. Review the available plans.
+3. Click **Subscribe**, complete payment, and you're ready.
 
 ---
 
-## 7. Make your first call
+## Step 4 — Add a phone number
 
-1. Go to **Calls** and click **New Call**.
-2. Enter the destination number (in E.164 format, e.g. `+14155551234`).
-3. Select which of your phone numbers to call from.
-4. Click **Call**.
+1. Click **Numbers** in the left sidebar.
+2. Click **Get a Number**.
+3. Filter by country and capability (Voice, SMS, MMS).
+4. Select a number and click **Buy**.
 
-You can record calls, add notes, and view a full transcript after the call ends.
+![Buy a number](screenshots/numbers-buy.png)
+*Search and purchase a number — it's ready within seconds*
+
+Your new number appears in the **Numbers** list immediately.
+
+---
+
+## Step 5 — Invite your team
+
+1. Go to **Settings → Members**.
+2. Click **Invite Member**.
+3. Enter their email and assign a role (**Admin** or **Member**).
+4. They'll receive an email invitation to join.
+
+![Invite member](screenshots/settings-invite.png)
+*Pending invitations are shown until the member accepts*
+
+---
+
+## Step 6 — Make your first call
+
+Click the **dialer icon** in the bottom-left corner of the app to open the floating dialer.
+
+![Floating dialer](screenshots/dialer-open.png)
+*Type any number on the dialpad and press the green call button*
+
+Enter the number you want to call, choose your **From** number, and click **Call**.
+
+---
+
+## What's next?
+
+| | |
+|-|-|
+| [Inbox](inbox.md) | Manage all your calls and messages in one place |
+| [Contacts](contacts.md) | Add, import, and organise your contacts |
+| [AI Agents](ai-agents.md) | Deploy an AI voice assistant on your number |
+| [AI Campaigns](ai-campaigns.md) | Run automated outbound call campaigns |

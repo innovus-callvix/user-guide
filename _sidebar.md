@@ -1,12 +1,13 @@
 - **User Guide**
   - [Getting Started](guide/getting-started.md)
-  - [Calls](guide/calls.md)
-  - [SMS & Messaging](guide/sms.md)
+  - [Inbox](guide/inbox.md)
   - [Contacts](guide/contacts.md)
   - [Phone Numbers](guide/phone-numbers.md)
-  - [Team Management](guide/team.md)
-  - [AI Voice Agents](guide/ai-agents.md)
-  - [Billing & Credits](guide/billing.md)
+  - [AI Agents](guide/ai-agents.md)
+  - [AI Campaigns](guide/ai-campaigns.md)
+  - [Knowledge Base](guide/knowledge-base.md)
+  - [Insights & Reports](guide/insights.md)
+  - [Team & Settings](guide/team.md)
 
 - **API Reference**
   - [Authentication](api/authentication.md)

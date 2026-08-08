@@ -1,97 +1,141 @@
 # Phone Numbers
 
+The Numbers page shows all the phone numbers your workspace owns. Each number can make and receive calls and SMS independently, with its own routing, voicemail, schedule, and more.
+
+![Numbers list](screenshots/numbers-list.png)
+*Each number card shows its status, capabilities (Voice/SMS/MMS), and quick-access settings*
+
+---
+
 ## Buying a number
 
-1. Go to **Phone Numbers → Browse Available**.
-2. Filter by country, area code, type (local, toll-free, mobile), or capability (voice / SMS / MMS / fax).
-3. Select a number and click **Buy** — only admins and owners can purchase numbers.
-4. The number is provisioned immediately via Twilio and appears in your number list.
+Only **Admins** and **Owners** can purchase numbers.
 
-Each number has a monthly renewal fee that is charged automatically from your workspace subscription.
+1. Click **Get a Number** (top-right of the Numbers page).
+2. Filter by **country**, **area code**, **type** (Local, Toll-free, Mobile), and **capability**.
+3. Select a number from the results.
+4. Give it a friendly name (e.g. "Sales Line") and click **Buy**.
+
+![Browse available numbers](screenshots/numbers-browse.png)
+*Numbers are provisioned instantly and appear in your list within seconds*
 
 ---
 
 ## Number settings
 
-Click any phone number to open its settings panel. Each number has independent configuration for:
+Click any number to open its settings page. Each number has its own independent configuration across several tabs.
+
+![Number settings page](screenshots/numbers-settings.png)
+
+---
 
 ### Routing
-How inbound calls are distributed to agents.
 
-| Mode | Behaviour |
-|------|-----------|
-| **Simultaneous ring** | All assigned agents ring at once; first to answer wins |
+Controls how inbound calls are distributed to your team.
+
+![Routing settings](screenshots/numbers-routing.png)
+
+| Option | What it does |
+|--------|-------------|
+| **Simultaneous ring** | All assigned agents ring at once — first to answer takes the call |
 | **Round robin** | Calls rotate across available agents in order |
-| **Queue** | Callers wait on hold; agents take calls one at a time |
+| **Queue** | Callers wait on hold until an agent is free |
+
+---
 
 ### IVR (Interactive Voice Response)
-A keypad menu that lets callers self-select a department or option.
-- Configure menu options, each routed to a team or agent.
-- Set a timeout and a fallback action if no key is pressed.
+
+Set up a keypad menu so callers can self-select a department or option.
+
+![IVR settings](screenshots/numbers-ivr.png)
+
+1. Toggle **IVR** on.
+2. Record or type a greeting (e.g. "Press 1 for Sales, Press 2 for Support").
+3. Assign each key press to a team, agent, or action.
+4. Set what happens if no key is pressed (timeout action).
+
+---
 
 ### Voicemail
-- Toggle on/off.
-- Upload a custom greeting (MP3 / WAV) or use text-to-speech.
-- Set the timeout after which unanswered calls go to voicemail.
 
-### Forwarding
-- Forward all calls (or only missed calls) to another number.
-- Useful for after-hours forwarding to a mobile.
+![Voicemail settings](screenshots/numbers-voicemail.png)
+
+- Toggle voicemail on or off.
+- Set the **timeout** — how many seconds before unanswered calls go to voicemail.
+- Upload a custom **greeting** (MP3 or WAV) or type one for text-to-speech.
+
+---
+
+### Call Forwarding
+
+Forward calls to another number — useful for after-hours routing to a mobile.
+
+![Forwarding settings](screenshots/numbers-forwarding.png)
+
+- Set the destination number.
+- Choose whether to forward **all calls** or only **missed calls**.
+
+---
 
 ### Auto-Reply SMS
-- Send an automatic SMS when a call to this number is missed.
-- Customise the message text.
 
-### Schedule (Business hours)
-- Define open hours per day of the week.
-- Add holidays — calls on those days follow the closed-hours rule.
-- Closed-hours action: voicemail, reject, or forward.
+Send an automatic text message when an inbound call is missed.
+
+![Auto-reply settings](screenshots/numbers-autoreply.png)
+
+- Toggle auto-reply on.
+- Write your message. Keep it short and helpful.
+
+---
+
+### Business Hours & Schedule
+
+Define when your number is "open". Calls outside business hours follow a separate rule (voicemail, reject, or forward).
+
+![Schedule settings](screenshots/numbers-schedule.png)
+
+1. Set open hours for each day of the week.
+2. Add **holidays** — calls on those days follow the closed-hours rule.
+3. Save.
+
+---
 
 ### AI Agent
-- Assign an AI voice agent to handle inbound calls instead of (or as fallback for) human agents.
-- See [AI Voice Agents](ai-agents.md).
 
-### Notifications & Recording
-- Toggle call recording on/off for this number.
-- Configure which events trigger push notifications to assigned agents.
+Assign an AI voice agent to handle inbound calls automatically.
+
+![AI agent assignment](screenshots/numbers-ai-agent.png)
+
+- Select a published AI agent from the dropdown.
+- Toggle it on. From now on, inbound calls to this number go to the AI agent.
+
+See [AI Agents](ai-agents.md) to learn how to build and publish one.
 
 ---
 
 ## Assigning agents to a number
 
-1. Open the number's settings and go to **Agents**.
-2. Click **Assign Agents** and select agents from your team.
-3. Only assigned agents receive inbound calls and SMS on that number.
+Go to the number's **Agents** tab to control who receives inbound calls and SMS.
 
----
+![Assign agents](screenshots/numbers-assign-agents.png)
 
-## Selecting your outbound number
-
-Each agent can choose which phone number to use for outbound calls:
-
-1. Go to your **Agent Profile**.
-2. Under **Outbound Number**, select from the numbers assigned to you.
+Click **Assign Agents**, select team members, and save. Only assigned agents will ring when someone calls this number.
 
 ---
 
 ## Releasing a number
 
-Only admins and owners can release (delete) a number.
+Click **Release Number** from the number's settings. This is permanent — the number is removed from your workspace immediately and can't be recovered.
 
-1. Open the number and click **Release Number**.
-2. Confirm the action.
-
-Releasing a number removes it from Twilio immediately. Calls and SMS to that number will stop working. This cannot be undone.
+> Only Admins and Owners can release a number.
 
 ---
 
-## Number lifecycle
+## Number status
 
-| Status | Meaning |
-|--------|---------|
-| Active | Healthy, in service |
-| Expiring soon | Monthly renewal due within 7 days |
-| Expired | Past renewal date — in a 7-day grace window |
+| Status | What it means |
+|--------|--------------|
+| Active | Working normally |
+| Expiring Soon | Renewal due within 7 days |
+| Expired | In the 7-day grace window — renew now to keep it |
 | Released | Permanently removed |
-
-During the 7-day grace window, you can manually renew the number. After that it is returned to the pool and may be purchased by someone else.

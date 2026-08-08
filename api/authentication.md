@@ -21,6 +21,7 @@ Content-Type: application/json
 ```
 
 **Response `200`:**
+
 ```json
 {
   "access_token": "eyJ...",
@@ -72,6 +73,7 @@ API keys are long-lived workspace credentials for integrations. Pass the key in 
 ```http
 Authorization: ApiKey cvx_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
+
 ```http
 X-API-Key: cvx_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
@@ -87,6 +89,7 @@ See [API Keys](../api/api-keys.md) for how to create and manage keys.
 New users register in two steps:
 
 **Step 1 — Send OTP:**
+
 ```http
 POST /auth/otp/send
 Content-Type: application/json
@@ -95,6 +98,7 @@ Content-Type: application/json
 ```
 
 **Step 2 — Verify OTP:**
+
 ```http
 POST /auth/otp/verify
 Content-Type: application/json
@@ -103,6 +107,7 @@ Content-Type: application/json
 ```
 
 **Step 3 — Complete registration:**
+
 ```http
 POST /auth/register
 Content-Type: application/json
@@ -157,6 +162,7 @@ Content-Type: application/json
 ## Rate limits on auth endpoints
 
 Auth endpoints have a dedicated rate limiter:
+
 - **5 requests / minute per IP** (burst of 5)
 - After 5 failed login attempts, the IP is temporarily locked out
 
@@ -170,8 +176,8 @@ Exceeding the limit returns `429 Too Many Requests`.
 { "message": "invalid credentials", "status": 401 }
 ```
 
-| Code | Meaning |
-|------|---------|
-| `401` | Missing, invalid, or expired token / key |
+| Code  | Meaning                                            |
+| ----- | -------------------------------------------------- |
+| `401` | Missing, invalid, or expired token / key           |
 | `403` | Authenticated but not authorized for this resource |
-| `429` | Rate limit exceeded |
+| `429` | Rate limit exceeded                                |
