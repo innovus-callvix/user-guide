@@ -1,181 +1,231 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Callvix Docs</title>
-  <link
-    rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📞</text></svg>"
-  />
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
-  <style>
-    :root { --theme-color: #3c56c0; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callvix Docs</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📞</text></svg>"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
+    />
+    <style>
+      :root {
+        --theme-color: #3c56c0;
+      }
 
-    .sidebar-nav > ul > li > a {
-      font-weight: 700;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: #aaa;
-    }
-    .sidebar-nav li a { font-size: 14px; }
-    .app-name { font-size: 18px; font-weight: 700; }
+      body {
+        font-size: 16px;
+      }
 
-    /* ── Right-side "On this page" TOC ── */
-    #on-this-page {
-      position: fixed;
-      top: 60px;
-      right: 0;
-      width: 220px;
-      max-height: calc(100vh - 72px);
-      overflow-y: auto;
-      padding: 20px 16px;
-      border-left: 1px solid #eee;
-      background: #fff;
-      z-index: 10;
-      box-sizing: border-box;
-    }
-    #on-this-page .otp-title {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: #aaa;
-      margin: 0 0 12px;
-    }
-    #on-this-page ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    #on-this-page li { margin: 0; }
-    #on-this-page a {
-      display: block;
-      padding: 4px 0 4px 0;
-      font-size: 13px;
-      color: #555;
-      text-decoration: none;
-      line-height: 1.4;
-      border-left: 2px solid transparent;
-      padding-left: 10px;
-      transition: color 0.15s, border-color 0.15s;
-    }
-    #on-this-page a:hover  { color: var(--theme-color); }
-    #on-this-page a.active {
-      color: var(--theme-color);
-      font-weight: 600;
-      border-left-color: var(--theme-color);
-    }
-    #on-this-page a.h3 { padding-left: 22px; font-size: 12px; color: #777; }
-    #on-this-page a.h3.active { color: var(--theme-color); }
+      .sidebar-nav > ul > li > a {
+        font-weight: 700;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: #aaa;
+      }
+      .sidebar .sidebar-nav li a {
+        font-size: 16px;
+      }
+      .app-name {
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .app-name img {
+        width: 160px;
+        height: auto;
+        padding: 16px 0 8px;
+        display: block;
+      }
 
-    /* shrink main content area so TOC doesn't cover text */
-    .content { margin-right: 236px !important; }
+      /* ── Right-side "On this page" TOC ── */
+      #on-this-page {
+        position: fixed;
+        top: 60px;
+        right: 0;
+        width: 220px;
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+        padding: 20px 16px;
+        border-left: 1px solid #eee;
+        background: #fff;
+        z-index: 10;
+        box-sizing: border-box;
+      }
+      #on-this-page .otp-title {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: #aaa;
+        margin: 0 0 12px;
+      }
+      #on-this-page ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      #on-this-page li {
+        margin: 0;
+      }
+      #on-this-page a {
+        display: block;
+        padding: 4px 0 4px 0;
+        font-size: 13px;
+        color: #555;
+        text-decoration: none;
+        line-height: 1.4;
+        border-left: 2px solid transparent;
+        padding-left: 10px;
+        transition:
+          color 0.15s,
+          border-color 0.15s;
+      }
+      #on-this-page a:hover {
+        color: var(--theme-color);
+      }
+      #on-this-page a.active {
+        color: var(--theme-color);
+        font-weight: 600;
+        border-left-color: var(--theme-color);
+      }
+      #on-this-page a.h3 {
+        padding-left: 22px;
+        font-size: 12px;
+        color: #777;
+      }
+      #on-this-page a.h3.active {
+        color: var(--theme-color);
+      }
 
-    @media (max-width: 1100px) {
-      #on-this-page { display: none; }
-      .content { margin-right: 0 !important; }
-    }
-  </style>
-</head>
-<body>
-  <div id="app">Loading…</div>
+      /* shrink main content area so TOC doesn't cover text */
+      .content {
+        margin-right: 236px !important;
+      }
 
-  <!-- Right-side TOC panel (populated by the plugin below) -->
-  <aside id="on-this-page"></aside>
+      @media (max-width: 1100px) {
+        #on-this-page {
+          display: none;
+        }
+        .content {
+          margin-right: 0 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">Loading…</div>
 
-  <script>
-    window.$docsify = {
-      name: '📞 Callvix',
-      repo: '',
-      loadSidebar: true,
-      subMaxLevel: 3,
-      auto2top: true,
-      homepage: 'README.md',
-      search: {
-        maxAge: 86400000,
-        paths: 'auto',
-        placeholder: 'Search…',
-        noData: 'No results.',
-        depth: 4,
-      },
-      plugins: [
-        function (hook) {
-          var toc = document.getElementById('on-this-page');
+    <!-- Right-side TOC panel (populated by the plugin below) -->
+    <aside id="on-this-page"></aside>
 
-          hook.doneEach(function () {
-            // Rebuild TOC on every page load
-            toc.innerHTML = '';
+    <script>
+      window.$docsify = {
+        name: "📞 Callvix",
+        logo: "guide/logo.webp",
+        repo: "",
+        loadSidebar: true,
+        subMaxLevel: 3,
+        auto2top: true,
+        homepage: "README.md",
+        search: {
+          maxAge: 86400000,
+          paths: "auto",
+          placeholder: "Search…",
+          noData: "No results.",
+          depth: 4,
+        },
+        plugins: [
+          function (hook) {
+            var toc = document.getElementById("on-this-page");
 
-            var content = document.querySelector('.content');
-            if (!content) return;
+            hook.doneEach(function () {
+              // Rebuild TOC on every page load
+              toc.innerHTML = "";
 
-            var headings = content.querySelectorAll('h2, h3');
-            if (headings.length < 2) {
-              toc.style.display = 'none';
-              return;
-            }
+              var content = document.querySelector(".content");
+              if (!content) return;
 
-            toc.style.display = '';
-
-            var title = document.createElement('p');
-            title.className = 'otp-title';
-            title.textContent = 'On this page';
-            toc.appendChild(title);
-
-            var ul = document.createElement('ul');
-
-            headings.forEach(function (h) {
-              // Give each heading an id if it doesn't have one
-              if (!h.id) {
-                h.id = h.textContent
-                  .toLowerCase()
-                  .replace(/[^\w\s-]/g, '')
-                  .replace(/\s+/g, '-');
+              var headings = content.querySelectorAll("h2, h3");
+              if (headings.length < 2) {
+                toc.style.display = "none";
+                return;
               }
 
-              var li = document.createElement('li');
-              var a = document.createElement('a');
-              a.href = '#' + h.id;
-              a.textContent = h.textContent.replace(/^#+\s*/, '');
-              a.className = h.tagName.toLowerCase();
+              toc.style.display = "";
 
-              a.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.getElementById(h.id).scrollIntoView({ behavior: 'smooth' });
-              });
+              var title = document.createElement("p");
+              title.className = "otp-title";
+              title.textContent = "On this page";
+              toc.appendChild(title);
 
-              li.appendChild(a);
-              ul.appendChild(li);
-            });
+              var ul = document.createElement("ul");
 
-            toc.appendChild(ul);
-
-            // Scroll spy — highlight the active heading
-            var observer = new IntersectionObserver(function (entries) {
-              entries.forEach(function (entry) {
-                var link = toc.querySelector('a[href="#' + entry.target.id + '"]');
-                if (!link) return;
-                if (entry.isIntersecting) {
-                  toc.querySelectorAll('a').forEach(function (a) { a.classList.remove('active'); });
-                  link.classList.add('active');
+              headings.forEach(function (h) {
+                // Give each heading an id if it doesn't have one
+                if (!h.id) {
+                  h.id = h.textContent
+                    .toLowerCase()
+                    .replace(/[^\w\s-]/g, "")
+                    .replace(/\s+/g, "-");
                 }
+
+                var li = document.createElement("li");
+                var a = document.createElement("a");
+                a.href = "#" + h.id;
+                a.textContent = h.textContent.replace(/^#+\s*/, "");
+                a.className = h.tagName.toLowerCase();
+
+                a.addEventListener("click", function (e) {
+                  e.preventDefault();
+                  document
+                    .getElementById(h.id)
+                    .scrollIntoView({ behavior: "smooth" });
+                });
+
+                li.appendChild(a);
+                ul.appendChild(li);
               });
-            }, { rootMargin: '0px 0px -70% 0px', threshold: 0 });
 
-            headings.forEach(function (h) { observer.observe(h); });
-          });
-        },
-      ],
-    };
-  </script>
+              toc.appendChild(ul);
 
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
-</body>
+              // Scroll spy — highlight the active heading
+              var observer = new IntersectionObserver(
+                function (entries) {
+                  entries.forEach(function (entry) {
+                    var link = toc.querySelector(
+                      'a[href="#' + entry.target.id + '"]',
+                    );
+                    if (!link) return;
+                    if (entry.isIntersecting) {
+                      toc.querySelectorAll("a").forEach(function (a) {
+                        a.classList.remove("active");
+                      });
+                      link.classList.add("active");
+                    }
+                  });
+                },
+                { rootMargin: "0px 0px -70% 0px", threshold: 0 },
+              );
+
+              headings.forEach(function (h) {
+                observer.observe(h);
+              });
+            });
+          },
+        ],
+      };
+    </script>
+
+    <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  </body>
 </html>

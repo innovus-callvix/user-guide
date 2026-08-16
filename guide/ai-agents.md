@@ -2,7 +2,7 @@
 
 An AI Agent is an automated voice assistant that answers calls, talks to customers, and responds based on your knowledge base — without needing a human agent on the line.
 
-![AI Agents list](screenshots/ai-agents-list.png)
+![AI Agents list](screenshots/agent-list.webp)
 *Your AI agents are shown as cards — click one to configure it*
 
 ---

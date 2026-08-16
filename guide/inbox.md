@@ -2,7 +2,7 @@
 
 The Inbox is your unified communication hub — every call and SMS conversation with your contacts lives here in one place. No switching between separate call logs and message threads.
 
-![Inbox overview](screenshots/inbox-overview.png)
+![Inbox overview](screenshots/unified-inbox.webp)
 *Left panel: conversation list — Right panel: the active conversation*
 
 ---
@@ -23,7 +23,7 @@ The Inbox has three panels:
 
 Click **New Message** (top-right of the Inbox) to open the new message dialog.
 
-![New message dialog](screenshots/inbox-new-message.png)
+![New message dialog](screenshots/new-conversation.webp)
 *Search for a contact or type a new number, choose your From number, and type your message*
 
 1. Search for an existing contact or type a phone number.
@@ -38,7 +38,7 @@ To make a call instead, use the floating **dialer** in the bottom-left corner.
 
 Each conversation groups **all communication** — calls and SMS — with a specific contact into a single thread. You can see the full history at a glance.
 
-![Conversation view](screenshots/inbox-conversation.png)
+![Conversation view](screenshots/unified-inbox.webp)
 *Calls show as call cards with duration and outcome; messages show as chat bubbles*
 
 **Within a conversation you can:**
@@ -85,13 +85,15 @@ Notes let your team leave internal comments on a conversation — the contact ne
 2. Type your note and press **Save**.
 3. Notes are visible to all team members with access to that conversation.
 
-![Conversation notes](screenshots/inbox-notes.png)
+![Conversation notes](screenshots/conversation-note.webp)
 
 ---
 
 ## Smart reply
 
 While composing a reply, click **Suggest** to get AI-generated response options based on the conversation context. Click any suggestion to insert it into the message box — edit it before sending.
+
+![Smart reply](screenshots/smart-reply.webp)
 
 ---
 

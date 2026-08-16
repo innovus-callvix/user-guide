@@ -8,7 +8,7 @@ Welcome to Callvix — your all-in-one business phone platform for calls, SMS, a
 
 Go to the Callvix app and click **Sign Up**.
 
-![Sign up screen](screenshots/auth-signup.png)
+![Sign up screen](screenshots/create-account.webp)
 *Enter your email to receive a verification code*
 
 1. Enter your **email address** and click **Continue**.
@@ -23,7 +23,7 @@ Already have an account? Click **Sign In** instead.
 
 A workspace is your team's home in Callvix. Everything — phone numbers, contacts, conversations, agents — lives inside it.
 
-![Create workspace](screenshots/onboarding-workspace.png)
+![Create workspace](screenshots/create-workspace.webp)
 *Name your workspace after your company or team*
 
 1. After signing in you'll be prompted to **Create a Workspace**.
@@ -38,7 +38,7 @@ A workspace is your team's home in Callvix. Everything — phone numbers, contac
 
 Before inviting your team or buying phone numbers, subscribe to a plan.
 
-![Plans page](screenshots/plans-list.png)
+![Plans page](screenshots/choose-plan.webp)
 *Compare plans and pick the one that fits your team size*
 
 1. Go to **Settings → Billing**.
@@ -77,7 +77,7 @@ Your new number appears in the **Numbers** list immediately.
 
 Click the **dialer icon** in the bottom-left corner of the app to open the floating dialer.
 
-![Floating dialer](screenshots/dialer-open.png)
+![Floating dialer](screenshots/dialer.webp)
 *Type any number on the dialpad and press the green call button*
 
 Enter the number you want to call, choose your **From** number, and click **Call**.
